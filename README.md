@@ -8,3 +8,6 @@ In `main.js` you can find some methods:
 - `createPublisher(companyName, firstParty, website)`. Create a new publisher.
 - `createGame(title, publisher)`. Create a new game. You have to pass title + id_publisher saved in DB. 
 - `createGame2(title, companyName)`. Create a new game. You have to pass title + company name. It'll check in the DB the company info and extract the publisher_id to create a new game.
+
+To execute:
+- Uncomment some of the function calls and execute `node models/main.js` in the terminal
