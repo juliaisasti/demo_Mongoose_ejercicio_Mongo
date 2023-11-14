@@ -1,12 +1,13 @@
 /* https://vegibit.com/mongoose-relationships-tutorial/ */
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/mongo-games')
-    .then(() => console.log('Now connected to MongoDB!'))
-    .catch(err => console.error('Something went wrong', err));
+// mongoose.connect('mongodb://localhost/mongo-games')
+//     .then(() => console.log('Now connected to MongoDB!'))
+//     .catch(err => console.error('Something went wrong', err));
 
 // Importar modelos
 const Game = require('./models/Game');
 const Publisher = require('./models/Publisher');
+const Provider = require('./models/providers.model');
 
 // Crear publisher/compañía
 async function createPublisher(companyName, firstParty, website) {
@@ -55,10 +56,17 @@ async function listGames() {
     console.log(games);
 }
 
+// async function listProviders() {
+//     const providers = await Provider
+//         .find()
+//         .populate('Product', 'product_id -_id')
+//     console.log(providers);
+// }
 
-//createPublisher('Nintendo', true, 'https://www.nintendo.com/');
-//createPublisher('Sony', true, 'https://www.sony.com/');
-//createPublisher('Sega', true, 'https://www.sega.com/');
+
+// createPublisher('Nintendo', true, 'https://www.nintendo.com/');
+// createPublisher('Sony', true, 'https://www.sony.com/');
+// createPublisher('Sega', true, 'https://www.sega.com/');
 
 
 //createGame('Sonic the Hedgehog', '62ea5c8deb0cc4db1eb95366');
@@ -79,10 +87,11 @@ async function listGames() {
 }); */
 
 //Crear juego pasando el ID de Sony
-//createGame2('Crash Bandicoot 3', 'Sony');
+// createGame2('Crash Bandicoot 3', 'Sony');
 
 //Crear juego pasando el ID de Sony
-//createGame2('Tetris', 'Nintendo');
+// createGame2('Tetris', 'Nintendo');
 
 // Listar todos los juegos
-//listGames()
+listGames();
+// listProviders();
